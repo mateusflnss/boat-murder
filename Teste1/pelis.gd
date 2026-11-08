@@ -1,11 +1,17 @@
 extends Node3D
 
+var varTarget = self
 
-# Called when the node enters the scene tree for the first time.
+@onready var nodeHitbox = $Area3D
+
 func _ready() -> void:
-	pass # Replace with function body.
+	await get_tree().create_timer(0.1).timeout
+	varTarget = get_parent().nodePlayer
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	rotation.x += deg_to_rad(5)
+	look_at(varTarget.global_position)
+	
+	global_position -= transform.basis.z / 10
+	
+	if nodeHitbox.has_overlapping_bodies():
+		get_tree().quit()
