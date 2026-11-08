@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://e0wgtje7kbog"]
+
+[ext_resource type="Script" uid="uid://cxm3ee3hh678v" path="res://Teste1/pelis.gd" id="1_pxm1n"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_g4v7s"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_g4v7s"]
+
+[sub_resource type="Curve" id="Curve_mrru5"]
+_data = [Vector2(1e-05, 0.39325845), 0.0, 0.0, 0, 0, Vector2(0.7567568, 0.6516854), 0.0, 0.0, 0, 0, Vector2(0.8378379, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_d0u6y"]
+curve = SubResource("Curve_mrru5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_57qmd"]
+direction = Vector3(0, 90, 0)
+spread = 5.0
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_curve = SubResource("CurveTexture_d0u6y")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3gngh"]
+transparency = 1
+depth_draw_mode = 1
+albedo_color = Color(1, 1, 0, 0.5803922)
+metallic = 0.5
+roughness = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_yf5fn"]
+material = SubResource("StandardMaterial3D_3gngh")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_57qmd"]
+sky_top_color = Color(8.5576474e-05, 0.22894982, 0.70095605, 1)
+sky_horizon_color = Color(1, 0.6784314, 0, 1)
+ground_bottom_color = Color(1, 0.2509804, 0.13333334, 1)
+ground_horizon_color = Color(1, 0.6784314, 0, 1)
+
+[sub_resource type="Sky" id="Sky_yf5fn"]
+sky_material = SubResource("ProceduralSkyMaterial_57qmd")
+
+[sub_resource type="Environment" id="Environment_g4v7s"]
+background_mode = 2
+sky = SubResource("Sky_yf5fn")
+
+[node name="Main" type="Node3D" unique_id=1876761398]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2019561345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.423516)
+
+[node name="Pelis" type="Node3D" parent="." unique_id=1308080985]
+script = ExtResource("1_pxm1n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pelis" unique_id=256716936]
+mesh = SubResource("CapsuleMesh_g4v7s")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Pelis" unique_id=735054348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -1, 0)
+mesh = SubResource("SphereMesh_g4v7s")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Pelis" unique_id=1956648755]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -1, 0)
+mesh = SubResource("SphereMesh_g4v7s")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Pelis" unique_id=1406866779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+amount = 128
+lifetime = 2.5
+explosiveness = 0.1
+randomness = 0.1
+process_material = SubResource("ParticleProcessMaterial_57qmd")
+draw_pass_1 = SubResource("SphereMesh_yf5fn")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1460776050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.133825, 0)
+light_color = Color(0.72156864, 1, 0.8666667, 1)
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 32.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1840240214]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.6378336, 0)
+light_color = Color(1, 0, 0.22352941, 1)
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 32.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1736391734]
+environment = SubResource("Environment_g4v7s")

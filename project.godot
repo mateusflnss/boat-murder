@@ -11,13 +11,19 @@ config_version=5
 [application]
 
 config/name="boat murderer"
+run/main_scene="uid://e0wgtje7kbog"
 config/features=PackedStringArray("4.7", "Forward Plus")
+run/max_fps=60
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=800
+window/size/viewport_height=600
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
+window/vsync/vsync_mode=0
 
 [physics]
 
@@ -25,4 +31,5 @@ window/stretch/aspect="expand"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
