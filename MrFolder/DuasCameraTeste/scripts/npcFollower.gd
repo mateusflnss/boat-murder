@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-var varFriction = 0.99
+var varFriction = 0.95
 
-var varSpeed = randf_range(.5,1.5)
+var varSpeed = randf_range(5,15)
 
 var varFollowDistance = randf_range(32,64)
 
