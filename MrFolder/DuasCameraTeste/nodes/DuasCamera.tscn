@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://dvvjhflti38jp" path="res://MrFolder/DuasCameraTeste/scripts/duas_camera.gd" id="1_43nd3"]
 [ext_resource type="PackedScene" uid="uid://cfyh6axsfwieq" path="res://MrFolder/DuasCameraTeste/nodes/main.tscn" id="3_43nd3"]
 
-[node name="DuasCamera" type="Node2D" unique_id=760891971]
+[node name="DuasCamera" type="Node2D" unique_id=760891971 node_paths=PackedStringArray("nodeWorld")]
 script = ExtResource("1_43nd3")
+nodeWorld = NodePath("HBoxContainer/SubViewportContainer/SubViewport/Main")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=480988779]
 clip_contents = true
@@ -21,7 +22,8 @@ size = Vector2i(400, 400)
 render_target_update_mode = 4
 
 [node name="Main" parent="HBoxContainer/SubViewportContainer/SubViewport" unique_id=1049794151 instance=ExtResource("3_43nd3")]
-position = Vector2(365, 370)
+
+[node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer/SubViewport" unique_id=453848717]
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="HBoxContainer" unique_id=835240117]
 layout_mode = 2
@@ -30,3 +32,5 @@ layout_mode = 2
 handle_input_locally = false
 size = Vector2i(400, 400)
 render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer2/SubViewport" unique_id=222752223]

@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://cfyh6axsfwieq"]
 
 [ext_resource type="Texture2D" uid="uid://ch1wkdfgyketh" path="res://MrFolder/DuasCameraTeste/img/MapaTemp.png" id="1_ida4l"]
+[ext_resource type="Script" uid="uid://bfblclm2b0q6p" path="res://MrFolder/DuasCameraTeste/nodes/main.gd" id="1_o7olr"]
 [ext_resource type="PackedScene" uid="uid://dju7jfl6cykwt" path="res://MrFolder/DuasCameraTeste/nodes/temp_player.tscn" id="2_o7olr"]
 
-[node name="Main" type="Node2D" unique_id=1849925074]
+[node name="Main" type="Node2D" unique_id=1849925074 node_paths=PackedStringArray("nodePlayer1", "nodePlayer2")]
+script = ExtResource("1_o7olr")
+nodePlayer1 = NodePath("TempPlayer")
+nodePlayer2 = NodePath("TempPlayer2")
 
 [node name="MapaTemp" type="Sprite2D" parent="." unique_id=815462406]
 texture = ExtResource("1_ida4l")
