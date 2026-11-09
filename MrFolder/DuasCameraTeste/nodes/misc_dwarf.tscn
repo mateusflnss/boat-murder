@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cwqxna0xjdmje"]
+
+[ext_resource type="Script" uid="uid://xjouese6fpxv" path="res://MrFolder/DuasCameraTeste/scripts/npcFollower.gd" id="1_vuc2x"]
+[ext_resource type="Texture2D" uid="uid://dpe3po2047t40" path="res://MrFolder/DuasCameraTeste/img/MiscDwarf.png" id="2_gfe61"]
+[ext_resource type="PackedScene" uid="uid://o6c3b81ke5ob" path="res://MrFolder/DuasCameraTeste/nodes/modules/node_parent_depth.tscn" id="3_spt67"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 4.0
+
+[node name="MiscDwarf" type="CharacterBody2D" unique_id=666294315]
+scale = Vector2(3, 3)
+collision_layer = 2
+script = ExtResource("1_vuc2x")
+
+[node name="nodeParentDepth" parent="." unique_id=1030124797 instance=ExtResource("3_spt67")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=48524762]
+y_sort_enabled = true
+texture = ExtResource("2_gfe61")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1827098722]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Timer" type="Timer" parent="." unique_id=123834423]
+wait_time = 0.5
+autostart = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=133536987]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 
 [node name="TempPlayer" type="CharacterBody2D" unique_id=2135245272]
-z_index = 999
+collision_layer = 2
 script = ExtResource("1_26qv0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1784503425]

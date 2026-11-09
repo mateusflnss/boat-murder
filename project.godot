@@ -54,7 +54,10 @@ Jump={
 
 [layer_names]
 
+2d_physics/layer_1="STATIC"
+2d_navigation/layer_1="FLOORNAV"
 3d_physics/layer_1="STATIC"
+2d_physics/layer_2="ENTITIES"
 3d_physics/layer_2="PLAYERHITBOX"
 3d_physics/layer_3="ENEMYHITBOX"
 

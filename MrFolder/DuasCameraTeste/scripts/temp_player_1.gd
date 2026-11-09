@@ -12,3 +12,5 @@ var varSpeed = 5
 func _process(delta: float) -> void:
 	global_position.x -= varSpeed * ( int(Input.is_key_pressed(keyLeft)) - int(Input.is_key_pressed(keyRight)) )
 	global_position.y -= varSpeed * ( int(Input.is_key_pressed(keyUp)) - int(Input.is_key_pressed(keyDown)) )
+	
+	move_and_slide()
