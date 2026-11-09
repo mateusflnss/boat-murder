@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://cfyh6axsfwieq"]
-
-[ext_resource type="Texture2D" uid="uid://ch1wkdfgyketh" path="res://MrFolder/DuasCameraTeste/MapaTemp.png" id="1_nkicp"]
-
-[node name="Main" type="Node2D" unique_id=1049794151]
-
-[node name="MapaTemp" type="Sprite2D" parent="." unique_id=2053460765]
-texture = ExtResource("1_nkicp")

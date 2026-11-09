@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dju7jfl6cykwt"]
+
+[ext_resource type="Script" uid="uid://by28aw01ks40j" path="res://MrFolder/DuasCameraTeste/scripts/temp_player_1.gd" id="1_26qv0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_g4v7s"]
+radius = 10.0
+height = 20.0
+
+[node name="TempPlayer" type="CharacterBody2D" unique_id=2135245272]
+modulate = Color(0, 1, 0, 1)
+z_index = 999
+script = ExtResource("1_26qv0")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=667116990]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1784503425]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1650489480]
+mesh = SubResource("SphereMesh_g4v7s")
