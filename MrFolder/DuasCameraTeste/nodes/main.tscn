@@ -4,33 +4,41 @@
 [ext_resource type="PackedScene" uid="uid://cfyh6axsfwieq" path="res://MrFolder/DuasCameraTeste/nodes/mapa.tscn" id="3_43nd3"]
 
 [node name="Main" type="Node2D" unique_id=760891971 node_paths=PackedStringArray("nodeWorld")]
+texture_filter = 1
 script = ExtResource("1_43nd3")
 nodeWorld = NodePath("HBoxContainer/SubViewportContainer/SubViewport/Main")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=480988779]
+texture_filter = 1
 clip_contents = true
 offset_right = 800.0
 offset_bottom = 400.0
 theme_override_constants/separation = 0
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer" unique_id=1484009711]
+texture_filter = 1
 layout_mode = 2
 
 [node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer" unique_id=785191043]
 handle_input_locally = false
+canvas_item_default_texture_filter = 0
 size = Vector2i(400, 400)
 render_target_update_mode = 4
 
 [node name="Main" parent="HBoxContainer/SubViewportContainer/SubViewport" unique_id=1049794151 instance=ExtResource("3_43nd3")]
+position = Vector2(400, 400)
 
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer/SubViewport" unique_id=453848717]
+limit_enabled = false
 
 [node name="SubViewportContainer2" type="SubViewportContainer" parent="HBoxContainer" unique_id=835240117]
 layout_mode = 2
 
 [node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer2" unique_id=668465149]
 handle_input_locally = false
+canvas_item_default_texture_filter = 0
 size = Vector2i(400, 400)
 render_target_update_mode = 4
 
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer2/SubViewport" unique_id=222752223]
+limit_enabled = false

@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://bfblclm2b0q6p" path="res://MrFolder/DuasCameraTeste/nodes/mapa.gd" id="1_34hly"]
 [ext_resource type="Texture2D" uid="uid://ch1wkdfgyketh" path="res://MrFolder/DuasCameraTeste/img/MapaTemp.png" id="1_ida4l"]
 [ext_resource type="PackedScene" uid="uid://dju7jfl6cykwt" path="res://MrFolder/DuasCameraTeste/nodes/temp_player.tscn" id="2_o7olr"]
+[ext_resource type="PackedScene" uid="uid://o6c3b81ke5ob" path="res://MrFolder/DuasCameraTeste/nodes/modules/node_parent_depth.tscn" id="4_k8fd2"]
+[ext_resource type="Texture2D" uid="uid://dpe3po2047t40" path="res://MrFolder/DuasCameraTeste/img/MiscDwarf.png" id="4_weqm6"]
+[ext_resource type="Texture2D" uid="uid://cf2une8103k0r" path="res://MrFolder/DuasCameraTeste/img/MilitiaDwarf.png" id="5_k8fd2"]
 
 [node name="Mapa" type="Node2D" unique_id=1849925074 node_paths=PackedStringArray("nodePlayer1", "nodePlayer2")]
 script = ExtResource("1_34hly")
@@ -10,6 +13,7 @@ nodePlayer1 = NodePath("TempPlayer")
 nodePlayer2 = NodePath("TempPlayer2")
 
 [node name="MapaTemp" type="Sprite2D" parent="." unique_id=815462406]
+z_index = -10
 texture = ExtResource("1_ida4l")
 
 [node name="TempPlayer" parent="." unique_id=2135245272 instance=ExtResource("2_o7olr")]
@@ -20,6 +24,19 @@ keyUp = 87
 keyDown = 83
 
 [node name="TempPlayer2" parent="." unique_id=1822635915 instance=ExtResource("2_o7olr")]
-modulate = Color(0, 0, 1, 1)
 position = Vector2(-336, -375)
 playerID = 2
+
+[node name="MiscDwarf" type="Sprite2D" parent="." unique_id=1635446192]
+position = Vector2(-167, -328)
+scale = Vector2(3, 3)
+texture = ExtResource("4_weqm6")
+
+[node name="nodeParentDepth" parent="MiscDwarf" unique_id=1030124797 instance=ExtResource("4_k8fd2")]
+
+[node name="MilitiaDwarf" type="Sprite2D" parent="." unique_id=324974215]
+position = Vector2(-112, -320)
+scale = Vector2(3, 3)
+texture = ExtResource("5_k8fd2")
+
+[node name="nodeParentDepth" parent="MilitiaDwarf" unique_id=243591535 instance=ExtResource("4_k8fd2")]

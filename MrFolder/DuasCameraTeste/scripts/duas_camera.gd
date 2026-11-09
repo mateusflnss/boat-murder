@@ -15,12 +15,8 @@ func _ready():
 	$HBoxContainer/SubViewportContainer2/SubViewport.world_2d = varWorld
 
 func funcMoveCam(cam, player):
-	cam.global_position.x = clamp(cam.global_position.x, player.global_position.x - 50, player.global_position.x + 50)
-	
-	if cam.global_position.x <= player.global_position.x:
-		cam.global_position.x += 5
-	else:
-		cam.global_position.x -= 5
+	cam.global_position.x -= (cam.global_position.x - player.global_position.x) / 2
+	cam.global_position.y -= (cam.global_position.y - player.global_position.y) / 2
 
 func _process(_delta):
 	funcMoveCam(nodeCam1, nodePlayer1)
