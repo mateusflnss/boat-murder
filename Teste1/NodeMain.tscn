@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://btj1ik7213lvo" path="res://Teste1/node_main.gd" id="1_dwffn"]
 [ext_resource type="PackedScene" uid="uid://b3ar1tvmbh7bs" path="res://Teste1/pelis.tscn" id="1_mrru5"]
 [ext_resource type="Script" uid="uid://b4sknwb2s57b8" path="res://Teste1/player.gd" id="2_mrru5"]
+[ext_resource type="Texture2D" uid="uid://cirwiymxwi3j7" path="res://icon.svg" id="3_tit6i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_57qmd"]
 sky_top_color = Color(8.5576474e-05, 0.22894982, 0.70095605, 1)
@@ -16,6 +17,9 @@ sky_material = SubResource("ProceduralSkyMaterial_57qmd")
 [sub_resource type="Environment" id="Environment_g4v7s"]
 background_mode = 2
 sky = SubResource("Sky_yf5fn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wd6em"]
+albedo_texture = ExtResource("3_tit6i")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_pxm1n"]
 size = Vector2(50, 50)
@@ -49,6 +53,7 @@ omni_range = 32.0
 environment = SubResource("Environment_g4v7s")
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1563439981]
+material_override = SubResource("StandardMaterial3D_wd6em")
 mesh = SubResource("PlaneMesh_pxm1n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=1750978020]
