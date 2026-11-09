@@ -1,22 +1,21 @@
 [gd_scene format=3 uid="uid://cfyh6axsfwieq"]
 
-[ext_resource type="Script" uid="uid://by28aw01ks40j" path="res://MrFolder/DuasCameraTeste/scripts/temp_player_1.gd" id="1_xhuji"]
+[ext_resource type="Texture2D" uid="uid://ch1wkdfgyketh" path="res://MrFolder/DuasCameraTeste/img/MapaTemp.png" id="1_ida4l"]
+[ext_resource type="PackedScene" uid="uid://dju7jfl6cykwt" path="res://MrFolder/DuasCameraTeste/nodes/temp_player.tscn" id="2_o7olr"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+[node name="Main" type="Node2D" unique_id=1849925074]
 
-[sub_resource type="SphereMesh" id="SphereMesh_g4v7s"]
-radius = 10.0
-height = 20.0
+[node name="MapaTemp" type="Sprite2D" parent="." unique_id=815462406]
+texture = ExtResource("1_ida4l")
 
-[node name="TempPlayer" type="CharacterBody2D" unique_id=2135245272]
-modulate = Color(0, 1, 0, 1)
-z_index = 999
-script = ExtResource("1_xhuji")
+[node name="TempPlayer" parent="." unique_id=2135245272 instance=ExtResource("2_o7olr")]
+position = Vector2(-371, -375)
+keyLeft = 65
+keyRight = 68
+keyUp = 87
+keyDown = 83
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=667116990]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1784503425]
-shape = SubResource("CircleShape2D_g4v7s")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1650489480]
-mesh = SubResource("SphereMesh_g4v7s")
+[node name="TempPlayer2" parent="." unique_id=1822635915 instance=ExtResource("2_o7olr")]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(-336, -375)
+playerID = 2
