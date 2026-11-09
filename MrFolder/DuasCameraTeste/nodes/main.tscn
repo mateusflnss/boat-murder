@@ -1,25 +1,36 @@
-[gd_scene format=3 uid="uid://cfyh6axsfwieq"]
+[gd_scene format=3 uid="uid://dex27y65t0vhf"]
 
-[ext_resource type="Texture2D" uid="uid://ch1wkdfgyketh" path="res://MrFolder/DuasCameraTeste/img/MapaTemp.png" id="1_ida4l"]
-[ext_resource type="Script" uid="uid://bfblclm2b0q6p" path="res://MrFolder/DuasCameraTeste/nodes/main.gd" id="1_o7olr"]
-[ext_resource type="PackedScene" uid="uid://dju7jfl6cykwt" path="res://MrFolder/DuasCameraTeste/nodes/temp_player.tscn" id="2_o7olr"]
+[ext_resource type="Script" uid="uid://dvvjhflti38jp" path="res://MrFolder/DuasCameraTeste/scripts/duas_camera.gd" id="1_43nd3"]
+[ext_resource type="PackedScene" uid="uid://cfyh6axsfwieq" path="res://MrFolder/DuasCameraTeste/nodes/mapa.tscn" id="3_43nd3"]
 
-[node name="Main" type="Node2D" unique_id=1849925074 node_paths=PackedStringArray("nodePlayer1", "nodePlayer2")]
-script = ExtResource("1_o7olr")
-nodePlayer1 = NodePath("TempPlayer")
-nodePlayer2 = NodePath("TempPlayer2")
+[node name="Main" type="Node2D" unique_id=760891971 node_paths=PackedStringArray("nodeWorld")]
+script = ExtResource("1_43nd3")
+nodeWorld = NodePath("HBoxContainer/SubViewportContainer/SubViewport/Main")
 
-[node name="MapaTemp" type="Sprite2D" parent="." unique_id=815462406]
-texture = ExtResource("1_ida4l")
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=480988779]
+clip_contents = true
+offset_right = 800.0
+offset_bottom = 400.0
+theme_override_constants/separation = 0
 
-[node name="TempPlayer" parent="." unique_id=2135245272 instance=ExtResource("2_o7olr")]
-position = Vector2(-371, -375)
-keyLeft = 65
-keyRight = 68
-keyUp = 87
-keyDown = 83
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer" unique_id=1484009711]
+layout_mode = 2
 
-[node name="TempPlayer2" parent="." unique_id=1822635915 instance=ExtResource("2_o7olr")]
-modulate = Color(0, 0, 1, 1)
-position = Vector2(-336, -375)
-playerID = 2
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer" unique_id=785191043]
+handle_input_locally = false
+size = Vector2i(400, 400)
+render_target_update_mode = 4
+
+[node name="Main" parent="HBoxContainer/SubViewportContainer/SubViewport" unique_id=1049794151 instance=ExtResource("3_43nd3")]
+
+[node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer/SubViewport" unique_id=453848717]
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="HBoxContainer" unique_id=835240117]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer2" unique_id=668465149]
+handle_input_locally = false
+size = Vector2i(400, 400)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer2/SubViewport" unique_id=222752223]
