@@ -7,7 +7,7 @@
 [node name="Main" type="Node2D" unique_id=760891971 node_paths=PackedStringArray("nodeWorld")]
 texture_filter = 1
 script = ExtResource("1_43nd3")
-nodeWorld = NodePath("HBoxContainer/SubViewportContainer/SubViewport/Main")
+nodeWorld = NodePath("HBoxContainer/SubViewportContainer/SubViewport/Mapa")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=480988779]
 texture_filter = 1
@@ -26,7 +26,7 @@ canvas_item_default_texture_filter = 0
 size = Vector2i(400, 400)
 render_target_update_mode = 4
 
-[node name="Main" parent="HBoxContainer/SubViewportContainer/SubViewport" unique_id=1049794151 instance=ExtResource("3_43nd3")]
+[node name="Mapa" parent="HBoxContainer/SubViewportContainer/SubViewport" unique_id=1049794151 instance=ExtResource("3_43nd3")]
 position = Vector2(400, 400)
 
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer/SubViewport" unique_id=453848717]

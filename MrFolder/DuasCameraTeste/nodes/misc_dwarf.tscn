@@ -22,7 +22,7 @@ texture = ExtResource("2_gfe61")
 shape = SubResource("CircleShape2D_g4v7s")
 
 [node name="Timer" type="Timer" parent="." unique_id=123834423]
-wait_time = 0.5
+wait_time = 2.5
 autostart = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=133536987]

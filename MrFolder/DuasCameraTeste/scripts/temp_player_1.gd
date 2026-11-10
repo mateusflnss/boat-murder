@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var playerID := 1
 
+@onready var nodeCamFocus := $CamFocus
+
 var varSpeed = 5
 
 @export var keyLeft = KEY_LEFT

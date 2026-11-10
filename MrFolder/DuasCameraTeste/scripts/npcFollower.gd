@@ -1,10 +1,12 @@
 extends CharacterBody2D
 
-var varFriction = 0.95
+var varFriction = 0.9
+var varStopFriction = 0.5
+var varCurrentFriction = varFriction
 
-var varSpeed = randf_range(5,15)
+var varSpeed = randf_range(25,50)
 
-var varFollowDistance = randf_range(32,64)
+var varFollowDistance = 16
 
 @onready var nodeNavAgent = $NavigationAgent2D
 
@@ -14,13 +16,15 @@ func _ready():
 	modulate = Color(randf_range(.25,1),randf_range(.25,1),randf_range(.25,1))
 
 func _process(delta: float) -> void:
-	if global_position.distance_to(nodeTarget.global_position) >= varFollowDistance:
-		velocity += global_position.direction_to(nodeNavAgent.get_next_path_position()) * varSpeed
-		velocity += Vector2(randf_range(-0.1,0.1),randf_range(-0.1,0.1))
+	var varNextPath = nodeNavAgent.get_next_path_position()
+	if global_position.distance_to(varNextPath) >= varFollowDistance:
+		velocity +=  global_position.direction_to(varNextPath) * varSpeed
+	else:
+		velocity *= varStopFriction
+	
+	velocity *= varCurrentFriction
 	
 	move_and_slide()
-	
-	velocity *= varFriction
 
 func _on_timer_timeout() -> void:
-	nodeNavAgent.target_position = nodeTarget.global_position
+	nodeNavAgent.target_position = nodeTarget.global_position + Vector2(randf_range(-128,128),randf_range(-128,128))
