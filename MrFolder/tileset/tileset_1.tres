@@ -1,0 +1,12 @@
+[gd_resource type="TileSet" format=3 uid="uid://dwf4lc1ti1h5o"]
+
+[ext_resource type="PackedScene" uid="uid://bs2ly32nhhowm" path="res://MrFolder/tileset/tiles_scenes/tile_floor_grass.tscn" id="1_2ry6q"]
+[ext_resource type="PackedScene" uid="uid://bbw84adj7j5dy" path="res://MrFolder/tileset/tiles_scenes/tile_wall_rock.tscn" id="2_f8m3s"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ic21c"]
+scenes/1/scene = ExtResource("1_2ry6q")
+scenes/2/scene = ExtResource("2_f8m3s")
+
+[resource]
+tile_size = Vector2i(10, 10)
+sources/0 = SubResource("TileSetScenesCollectionSource_ic21c")

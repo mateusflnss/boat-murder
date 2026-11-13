@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lx3vx16tk8fs"
-path="res://.godot/imported/UiCamBorder.png-a6f369d2665ea8e1bd6facb70b616854.ctex"
+uid="uid://dbw6tv06ddco7"
+path="res://.godot/imported/PlayerDwarf.png-08480808dc3fc9b7f76050e07b924d11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MrFolder/DuasCameraTeste/img/UiCamBorder.png"
-dest_files=["res://.godot/imported/UiCamBorder.png-a6f369d2665ea8e1bd6facb70b616854.ctex"]
+source_file="res://MrFolder/1 img/PlayerDwarf.png"
+dest_files=["res://.godot/imported/PlayerDwarf.png-08480808dc3fc9b7f76050e07b924d11.ctex"]
 
 [params]
 

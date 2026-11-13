@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1kwxv7rae2i6"
-path="res://.godot/imported/Tileset.png-c390cd47018553e93d965ff1c60f0601.ctex"
+uid="uid://cf2une8103k0r"
+path="res://.godot/imported/MilitiaDwarf.png-ba8ffe6a75d52d8cd04d3f9bb7bf307e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MrFolder/DuasCameraTeste/img/Tileset.png"
-dest_files=["res://.godot/imported/Tileset.png-c390cd47018553e93d965ff1c60f0601.ctex"]
+source_file="res://MrFolder/1 img/MilitiaDwarf.png"
+dest_files=["res://.godot/imported/MilitiaDwarf.png-ba8ffe6a75d52d8cd04d3f9bb7bf307e.ctex"]
 
 [params]
 

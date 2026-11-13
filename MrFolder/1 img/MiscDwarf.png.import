@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf2une8103k0r"
-path="res://.godot/imported/MilitiaDwarf.png-5c694af84860777769f67318b13af36d.ctex"
+uid="uid://dpe3po2047t40"
+path="res://.godot/imported/MiscDwarf.png-0d7726c96dbeebb441a71c2031c41c1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MrFolder/DuasCameraTeste/img/MilitiaDwarf.png"
-dest_files=["res://.godot/imported/MilitiaDwarf.png-5c694af84860777769f67318b13af36d.ctex"]
+source_file="res://MrFolder/1 img/MiscDwarf.png"
+dest_files=["res://.godot/imported/MiscDwarf.png-0d7726c96dbeebb441a71c2031c41c1c.ctex"]
 
 [params]
 

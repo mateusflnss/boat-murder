@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dju7jfl6cykwt"]
+
+[ext_resource type="Script" uid="uid://by28aw01ks40j" path="res://MrFolder/entities/temp_player_1.gd" id="1_26qv0"]
+[ext_resource type="Texture2D" uid="uid://dbw6tv06ddco7" path="res://MrFolder/1 img/PlayerDwarf.png" id="2_lfvjy"]
+[ext_resource type="PackedScene" uid="uid://o6c3b81ke5ob" path="res://MrFolder/modules/mod_parent_depth.tscn" id="3_icmav"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 3.0
+
+[node name="TempPlayer" type="CharacterBody2D" unique_id=2135245272]
+collision_layer = 2
+script = ExtResource("1_26qv0")
+
+[node name="modParentDepth" parent="." unique_id=1030124797 instance=ExtResource("3_icmav")]
+
+[node name="CamFocus" type="Node2D" parent="." unique_id=981596651]
+
+[node name="PlayerDwarf" type="Sprite2D" parent="." unique_id=309455824]
+texture = ExtResource("2_lfvjy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1784503425]
+shape = SubResource("CircleShape2D_g4v7s")

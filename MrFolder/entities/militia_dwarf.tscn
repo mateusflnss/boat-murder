@@ -1,18 +1,17 @@
 [gd_scene format=3 uid="uid://c02raf0rx5mof"]
 
-[ext_resource type="Texture2D" uid="uid://cf2une8103k0r" path="res://MrFolder/DuasCameraTeste/img/MilitiaDwarf.png" id="1_j8ts7"]
-[ext_resource type="Script" uid="uid://kwxg8ihfyktg" path="res://MrFolder/DuasCameraTeste/scripts/npcMilitiaFollower.gd" id="1_v8x22"]
-[ext_resource type="PackedScene" uid="uid://o6c3b81ke5ob" path="res://MrFolder/DuasCameraTeste/nodes/modules/node_parent_depth.tscn" id="2_v8x22"]
+[ext_resource type="Texture2D" uid="uid://cf2une8103k0r" path="res://MrFolder/1 img/MilitiaDwarf.png" id="1_j8ts7"]
+[ext_resource type="Script" uid="uid://kwxg8ihfyktg" path="res://MrFolder/entities/militia_dwarf.gd" id="1_v8x22"]
+[ext_resource type="PackedScene" uid="uid://o6c3b81ke5ob" path="res://MrFolder/modules/mod_parent_depth.tscn" id="2_v8x22"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 4.0
 
 [node name="MilitiaDwarf" type="CharacterBody2D" unique_id=732523442]
-scale = Vector2(3, 3)
 collision_layer = 2
 script = ExtResource("1_v8x22")
 
-[node name="nodeParentDepth" parent="." unique_id=1030124797 instance=ExtResource("2_v8x22")]
+[node name="modParentDepth" parent="." unique_id=1030124797 instance=ExtResource("2_v8x22")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1645130541]
 texture = ExtResource("1_j8ts7")

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dex27y65t0vhf"]
 
-[ext_resource type="Script" uid="uid://dvvjhflti38jp" path="res://MrFolder/DuasCameraTeste/scripts/duas_camera.gd" id="1_43nd3"]
-[ext_resource type="PackedScene" uid="uid://cfyh6axsfwieq" path="res://MrFolder/DuasCameraTeste/nodes/mapa.tscn" id="3_43nd3"]
-[ext_resource type="Texture2D" uid="uid://lx3vx16tk8fs" path="res://MrFolder/DuasCameraTeste/img/UiCamBorder.png" id="3_o7olr"]
+[ext_resource type="Script" uid="uid://dvvjhflti38jp" path="res://MrFolder/misc/main.gd" id="1_43nd3"]
+[ext_resource type="PackedScene" uid="uid://cfyh6axsfwieq" path="res://MrFolder/misc/mapa.tscn" id="3_43nd3"]
+[ext_resource type="Texture2D" uid="uid://lx3vx16tk8fs" path="res://MrFolder/1 img/UiCamBorder.png" id="3_o7olr"]
 
 [node name="Main" type="Node2D" unique_id=760891971 node_paths=PackedStringArray("nodeWorld")]
 texture_filter = 1

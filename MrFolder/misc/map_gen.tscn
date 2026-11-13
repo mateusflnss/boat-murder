@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dochubr021wbp"]
+
+[ext_resource type="Script" uid="uid://l2oo6ynkvtf0" path="res://MrFolder/misc/map_gen.gd" id="1_q10rk"]
+[ext_resource type="PackedScene" uid="uid://byn0v5lxomj7f" path="res://MrFolder/rooms/base_room.tscn" id="2_q10rk"]
+
+[node name="MapGen" type="Node2D" unique_id=865095355]
+z_index = -1000
+script = ExtResource("1_q10rk")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1694940467]
+exclude_parent = false
+target_position = Vector2(0, 0)
+collision_mask = 8
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="BaseRoom" parent="." unique_id=2060261384 instance=ExtResource("2_q10rk")]

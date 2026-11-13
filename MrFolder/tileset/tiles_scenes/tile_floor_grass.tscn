@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bs2ly32nhhowm"]
+
+[ext_resource type="Script" uid="uid://ytt3nve526qe" path="res://MrFolder/tileset/tiles_scenes/tile_floor_grass.gd" id="1_81eyw"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_g4v7s"]
+size = Vector2(10, 10)
+
+[sub_resource type="Gradient" id="Gradient_d0u6y"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.3313253, 0.5421687)
+colors = PackedColorArray(0, 0.78852, 1.1551381e-06, 1, 0, 0.9228308, 3.080368e-06, 1, 0.3259149, 0.99999994, 0.29823202, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_57qmd"]
+resource_local_to_scene = true
+noise_type = 4
+frequency = 0.3125
+domain_warp_enabled = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yf5fn"]
+resource_local_to_scene = true
+width = 10
+height = 10
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_57qmd")
+color_ramp = SubResource("Gradient_d0u6y")
+seamless = true
+seamless_blend_skirt = 0.25
+
+[node name="TileFloorGrass" type="MeshInstance2D" unique_id=1912406657]
+mesh = SubResource("QuadMesh_g4v7s")
+texture = SubResource("NoiseTexture2D_yf5fn")
+script = ExtResource("1_81eyw")

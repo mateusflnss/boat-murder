@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://o6c3b81ke5ob"]
-
-[ext_resource type="Script" uid="uid://busgu3sqkdv63" path="res://MrFolder/DuasCameraTeste/scripts/node_parent_depth.gd" id="1_m3xps"]
-
-[node name="nodeParentDepth" type="Node" unique_id=1030124797]
-script = ExtResource("1_m3xps")

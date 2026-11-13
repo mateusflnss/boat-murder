@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bbw84adj7j5dy"]
+
+[ext_resource type="Script" uid="uid://4ypj815ybtxu" path="res://MrFolder/tileset/tiles_scenes/tile_wall_rock.gd" id="1_vwyxo"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_g4v7s"]
+size = Vector2(10, 10)
+
+[sub_resource type="Gradient" id="Gradient_d0u6y"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.45783132)
+colors = PackedColorArray(0.55295557, 0.55295557, 0.55295545, 1, 0.5971763, 0.5971761, 0.597176, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_57qmd"]
+resource_local_to_scene = true
+noise_type = 2
+frequency = 0.1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yf5fn"]
+resource_local_to_scene = true
+width = 10
+height = 10
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_57qmd")
+color_ramp = SubResource("Gradient_d0u6y")
+seamless = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(10, 10)
+
+[node name="TileWallRock" type="MeshInstance2D" unique_id=1912406657]
+mesh = SubResource("QuadMesh_g4v7s")
+texture = SubResource("NoiseTexture2D_yf5fn")
+script = ExtResource("1_vwyxo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1703586191 groups=["navigation_polygon_source_geometry_group"]]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1364452190]
+visible = false
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=1143452669 groups=["navigation_polygon_source_geometry_group"]]
+visible = false
+vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
