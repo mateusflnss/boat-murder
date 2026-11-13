@@ -13,10 +13,9 @@ func _ready():
 	await get_tree().process_frame
 	funcGenRooms(varMapSize)
 	
-	await get_tree().create_timer(10).timeout
+	await get_tree().create_timer(5).timeout
 	
-	arrayRooms = []
-	nodeRay.queue_free()
+	$MapGenWait.queue_free()
 
 func funcNewRoom(child, pos):
 	nodeRay.global_position = child.global_position

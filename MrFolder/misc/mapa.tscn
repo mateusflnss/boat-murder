@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://bfblclm2b0q6p" path="res://MrFolder/misc/mapa.gd" id="1_a6dhy"]
 [ext_resource type="PackedScene" uid="uid://dju7jfl6cykwt" path="res://MrFolder/entities/temp_player.tscn" id="2_3ejlp"]
 [ext_resource type="PackedScene" uid="uid://dochubr021wbp" path="res://MrFolder/misc/map_gen.tscn" id="2_7r4mk"]
-[ext_resource type="Script" uid="uid://df5050h17ffoy" path="res://MrFolder/entities/dwarf_spawner.gd" id="4_2rsxc"]
+[ext_resource type="PackedScene" uid="uid://c02raf0rx5mof" path="res://MrFolder/entities/militia_dwarf.tscn" id="4_h778e"]
+[ext_resource type="PackedScene" uid="uid://cwqxna0xjdmje" path="res://MrFolder/entities/misc_dwarf.tscn" id="5_1xwmr"]
 
 [node name="Mapa" type="Node2D" unique_id=865095355 node_paths=PackedStringArray("nodePlayer1", "nodePlayer2")]
 scale = Vector2(3, 3)
@@ -15,22 +16,26 @@ nodePlayer2 = NodePath("TempPlayer2")
 varMapSize = 5
 
 [node name="TempPlayer1" parent="." unique_id=2135245272 instance=ExtResource("2_3ejlp")]
-playerID = 2
 keyLeft = 65
 keyRight = 68
 keyUp = 87
 keyDown = 83
 
 [node name="TempPlayer2" parent="." unique_id=225796474 instance=ExtResource("2_3ejlp")]
+keyJump = 4194326
 
-[node name="NpcSpawner" type="Node2D" parent="." unique_id=1221156274 node_paths=PackedStringArray("nodeTarget1", "nodeTarget2")]
-position = Vector2(-45, -45)
-script = ExtResource("4_2rsxc")
-nodeTarget1 = NodePath("../TempPlayer1")
-nodeTarget2 = NodePath("../TempPlayer2")
+[node name="MilitiaDwarf1" parent="." unique_id=732523442 node_paths=PackedStringArray("nodeTarget") instance=ExtResource("4_h778e")]
+position = Vector2(-15.666667, -15.333334)
+nodeTarget = NodePath("../MiscDwarf1")
 
-[node name="Timer" type="Timer" parent="NpcSpawner" unique_id=1246343258]
-wait_time = 0.05
-autostart = true
+[node name="MiscDwarf1" parent="." unique_id=666294315 node_paths=PackedStringArray("nodeTarget") instance=ExtResource("5_1xwmr")]
+position = Vector2(-15.333334, 15.333334)
+nodeTarget = NodePath("../TempPlayer1")
 
-[connection signal="timeout" from="NpcSpawner/Timer" to="NpcSpawner" method="_on_timer_timeout"]
+[node name="MilitiaDwarf2" parent="." unique_id=936797115 node_paths=PackedStringArray("nodeTarget") instance=ExtResource("4_h778e")]
+position = Vector2(15.333333, -15)
+nodeTarget = NodePath("../MiscDwarf2")
+
+[node name="MiscDwarf2" parent="." unique_id=1675409985 node_paths=PackedStringArray("nodeTarget") instance=ExtResource("5_1xwmr")]
+position = Vector2(14.333333, 16)
+nodeTarget = NodePath("../TempPlayer2")

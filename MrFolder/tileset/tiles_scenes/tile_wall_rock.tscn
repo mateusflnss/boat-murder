@@ -32,7 +32,7 @@ mesh = SubResource("QuadMesh_g4v7s")
 texture = SubResource("NoiseTexture2D_yf5fn")
 script = ExtResource("1_vwyxo")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1703586191 groups=["navigation_polygon_source_geometry_group"]]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1703586191]
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1364452190]
@@ -41,7 +41,7 @@ shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=1143452669 groups=["navigation_polygon_source_geometry_group"]]
 visible = false
-vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+vertices = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
 avoidance_enabled = false

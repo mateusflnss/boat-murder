@@ -59,6 +59,7 @@ Jump={
 3d_physics/layer_1="STATIC"
 2d_physics/layer_2="ENTITIES"
 3d_physics/layer_2="PLAYERHITBOX"
+2d_physics/layer_3="CAMFOCUS"
 3d_physics/layer_3="ENEMYHITBOX"
 2d_physics/layer_4="ROOMGEN"
 

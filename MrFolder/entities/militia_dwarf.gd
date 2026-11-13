@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
-var varTargetSpread = 16
+var varTargetSpread = 32
 
 var varFriction = 0.75
 
-var varSpeed = randf_range(100,250)
+var varStopFriction = 0.5
 
-var varFollowDistance = 6
+var varSpeed = randf_range(50,75)
+
+var varFollowDistance = 3
 
 @onready var nodeNavAgent = $NavigationAgent2D
 
@@ -21,12 +23,13 @@ func _process(delta: float) -> void:
 	var varPath = nodeNavAgent.get_next_path_position()
 	
 	if global_position.distance_to(varPath) >= varFollowDistance:
-		velocity = global_position.direction_to(varPath) * varSpeed
-		velocity += Vector2(randf_range(-0.1,0.1),randf_range(-0.1,0.1))
-	
-	move_and_slide()
+		velocity += global_position.direction_to(varPath) * varSpeed
+	else:
+		velocity *= varStopFriction
 	
 	velocity *= varFriction
+	
+	move_and_slide()
 
 func _on_timer_timeout() -> void:
 	nodeNavAgent.target_position = nodeTarget.global_position + Vector2(randf_range(-varTargetSpread,varTargetSpread), randf_range(-varTargetSpread,varTargetSpread))

@@ -8,6 +8,7 @@
 radius = 4.0
 
 [node name="MilitiaDwarf" type="CharacterBody2D" unique_id=732523442]
+z_as_relative = false
 collision_layer = 2
 script = ExtResource("1_v8x22")
 
