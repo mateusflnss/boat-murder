@@ -17,7 +17,7 @@ var varFollowDistance = 16
 func _ready():
 	modulate = Color(randf_range(.25,1),randf_range(.25,1),randf_range(.25,1))
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var varPath = nodeNavAgent.get_next_path_position()
 	
 	if global_position.distance_to(varPath) >= varFollowDistance:

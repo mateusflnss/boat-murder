@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dochubr021wbp"]
 
 [ext_resource type="Script" uid="uid://l2oo6ynkvtf0" path="res://MrFolder/misc/map_gen.gd" id="1_q10rk"]
-[ext_resource type="PackedScene" uid="uid://byn0v5lxomj7f" path="res://MrFolder/rooms/base_room.tscn" id="2_q10rk"]
+[ext_resource type="PackedScene" uid="uid://wbmtrshdcpud" path="res://MrFolder/rooms_base/start_room.tscn" id="2_bd80l"]
 [ext_resource type="TileSet" uid="uid://dwf4lc1ti1h5o" path="res://MrFolder/tileset/tileset_1.tres" id="2_rv4tk"]
 
 [sub_resource type="TextMesh" id="TextMesh_g4v7s"]
@@ -19,7 +19,7 @@ collision_mask = 8
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="BaseRoom" parent="." unique_id=2060261384 instance=ExtResource("2_q10rk")]
+[node name="BaseRoom" parent="." unique_id=2060261384 instance=ExtResource("2_bd80l")]
 
 [node name="MapGenWait" type="TileMapLayer" parent="." unique_id=705635895]
 z_index = 100

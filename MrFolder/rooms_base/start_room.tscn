@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://wbmtrshdcpud"]
+
+[ext_resource type="PackedScene" uid="uid://byn0v5lxomj7f" path="res://MrFolder/rooms_base/base_room.tscn" id="1_07evn"]
+
+[node name="StartRoom" type="Node2D" unique_id=677185371]
+
+[node name="BaseRoom" parent="." unique_id=2060261384 instance=ExtResource("1_07evn")]

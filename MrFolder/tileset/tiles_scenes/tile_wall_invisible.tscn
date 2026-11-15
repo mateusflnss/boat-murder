@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ilkwqfc3h2ll"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(10, 10)
+
+[node name="TileWallInvisible" type="Node2D" unique_id=2116669369]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1703586191]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1364452190]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=1143452669 groups=["navigation_polygon_source_geometry_group"]]
+visible = false
+vertices = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false

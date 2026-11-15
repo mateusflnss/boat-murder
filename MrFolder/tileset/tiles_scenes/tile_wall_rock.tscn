@@ -2,34 +2,35 @@
 
 [ext_resource type="Script" uid="uid://4ypj815ybtxu" path="res://MrFolder/tileset/tiles_scenes/tile_wall_rock.gd" id="1_vwyxo"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_g4v7s"]
+[sub_resource type="QuadMesh" id="QuadMesh_m3bu4"]
 size = Vector2(10, 10)
 
-[sub_resource type="Gradient" id="Gradient_d0u6y"]
+[sub_resource type="Gradient" id="Gradient_vurqo"]
 interpolation_mode = 1
-offsets = PackedFloat32Array(0, 0.45783132)
-colors = PackedColorArray(0.55295557, 0.55295557, 0.55295545, 1, 0.5971763, 0.5971761, 0.597176, 1)
+offsets = PackedFloat32Array(0, 0.37349397, 0.8072289, 0.9698795)
+colors = PackedColorArray(0.38549232, 0.38549256, 0.3854924, 1, 0.5251013, 0.5251013, 0.5251013, 1, 0.6255971, 0.6255971, 0.62559694, 1, 0.3366076, 0.33660766, 0.33660746, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_57qmd"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xrp4l"]
 resource_local_to_scene = true
-noise_type = 2
-frequency = 0.1
+noise_type = 3
+frequency = 0.2365
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yf5fn"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wa7gq"]
 resource_local_to_scene = true
 width = 10
 height = 10
 generate_mipmaps = false
-noise = SubResource("FastNoiseLite_57qmd")
-color_ramp = SubResource("Gradient_d0u6y")
+noise = SubResource("FastNoiseLite_xrp4l")
+color_ramp = SubResource("Gradient_vurqo")
 seamless = true
+seamless_blend_skirt = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(10, 10)
 
-[node name="TileWallRock" type="MeshInstance2D" unique_id=1912406657]
-mesh = SubResource("QuadMesh_g4v7s")
-texture = SubResource("NoiseTexture2D_yf5fn")
+[node name="TileWallRock" type="MeshInstance2D" unique_id=583540035]
+mesh = SubResource("QuadMesh_m3bu4")
+texture = SubResource("NoiseTexture2D_wa7gq")
 script = ExtResource("1_vwyxo")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1703586191]

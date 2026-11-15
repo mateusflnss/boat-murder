@@ -2,10 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://bs2ly32nhhowm" path="res://MrFolder/tileset/tiles_scenes/tile_floor_grass.tscn" id="1_2ry6q"]
 [ext_resource type="PackedScene" uid="uid://bbw84adj7j5dy" path="res://MrFolder/tileset/tiles_scenes/tile_wall_rock.tscn" id="2_f8m3s"]
+[ext_resource type="PackedScene" uid="uid://ilkwqfc3h2ll" path="res://MrFolder/tileset/tiles_scenes/tile_wall_invisible.tscn" id="3_s07ke"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ic21c"]
 scenes/1/scene = ExtResource("1_2ry6q")
 scenes/2/scene = ExtResource("2_f8m3s")
+scenes/3/scene = ExtResource("3_s07ke")
 
 [resource]
 tile_size = Vector2i(10, 10)

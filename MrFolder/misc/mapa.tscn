@@ -13,7 +13,7 @@ nodePlayer1 = NodePath("TempPlayer1")
 nodePlayer2 = NodePath("TempPlayer2")
 
 [node name="MapGen" parent="." unique_id=674701365 instance=ExtResource("2_7r4mk")]
-varMapSize = 5
+varGenSteps = 10
 
 [node name="TempPlayer1" parent="." unique_id=2135245272 instance=ExtResource("2_3ejlp")]
 keyLeft = 65
