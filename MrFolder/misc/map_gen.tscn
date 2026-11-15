@@ -11,6 +11,7 @@ pixel_size = 0.5
 [node name="MapGen" type="Node2D" unique_id=865095355]
 z_index = -1000
 script = ExtResource("1_q10rk")
+varRoomChance = 50
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1694940467]
 exclude_parent = false

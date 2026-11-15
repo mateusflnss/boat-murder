@@ -1,8 +1,6 @@
 extends Node
 
 func funcRoomDoors(pos, door):
-	await get_tree().physics_frame
-	
 	$RayCast2D.target_position = pos
 	$RayCast2D.force_raycast_update()
 	if $RayCast2D.is_colliding():

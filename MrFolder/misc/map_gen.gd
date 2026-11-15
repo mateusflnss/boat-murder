@@ -22,11 +22,13 @@ func _ready():
 	funcGenRooms(varGenSteps)
 
 func funcNewRoom(child, pos):
-	nodeRay.global_position = child.global_position
-	nodeRay.target_position = pos/3
-	
-	if get_child_count() < varMaxRooms:
-		if get_child_count() < varMinRooms + varStartingChildren or randi_range(0,100) <= varRoomChance:
+	if get_child_count() < varMaxRooms + varStartingChildren:
+		if get_child_count() - varStartingChildren < varMinRooms or varRoomChance + Vector2.ZERO.distance_to(child.global_position / 3) * randf_range(0.025,0.05) >= randi_range(0,100):
+			nodeRay.global_position = child.global_position
+			nodeRay.target_position = pos/3
+			
+			print(Vector2.ZERO.distance_to(child.global_position / 3) * randf_range(0.025,0.05))
+			
 			nodeRay.force_raycast_update()
 			if !nodeRay.is_colliding():
 				var newRoom = arrayRooms.pick_random().instantiate()
@@ -34,10 +36,14 @@ func funcNewRoom(child, pos):
 				newRoom.global_position = child.global_position + pos
 
 func funcSpreadRoom(child):
-	funcNewRoom(child, Vector2(420,0))
-	funcNewRoom(child, Vector2(-420,0))
-	funcNewRoom(child, Vector2(0,420))
-	funcNewRoom(child, Vector2(0,-420))
+	if randi() or get_child_count() < varMinRooms + varStartingChildren:
+		funcNewRoom(child, Vector2(420,0))
+	if randi() or get_child_count() < varMinRooms + varStartingChildren:
+		funcNewRoom(child, Vector2(-420,0))
+	if randi() or get_child_count() < varMinRooms + varStartingChildren:
+		funcNewRoom(child, Vector2(0,420))
+	if randi() or get_child_count() < varMinRooms + varStartingChildren:
+		funcNewRoom(child, Vector2(0,-420))
 
 func funcGenRooms(size):
 	#GERAR OS TILES
@@ -48,7 +54,7 @@ func funcGenRooms(size):
 				await get_tree().physics_frame
 		#DEPOIS DE GERAR OS TILES
 		if i == size - 1:
-			print("placed all them tiles ☻")
+			print("placed all them tiles ☻", get_child_count() - varStartingChildren)
 			
 			if $MapGenWait:
 				$MapGenWait.queue_free()
